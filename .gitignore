@@ -1,0 +1,32 @@
+# environment
+.env
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.db
+*.sqlite3
+backend/uploads/
+
+# node
+node_modules/
+dist/
+.vite/
+
+# android / gradle
+.gradle/
+local.properties
+*.apk
+*.aab
+
+# editors / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs (uvicorn, vite, ...)
+*.log

@@ -1,0 +1,4 @@
+# Everything needed to run the test suite (not installed on the server).
+-r requirements.txt
+
+pytest==9.1.1

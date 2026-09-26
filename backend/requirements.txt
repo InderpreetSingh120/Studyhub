@@ -1,0 +1,22 @@
+# Runtime dependencies of the FastAPI server (verified against the imports in
+# backend/app/). Install on the server with:
+#   .venv/bin/pip install -r requirements.txt
+fastapi==0.141.1
+# Plain uvicorn on purpose: the [standard] extras (uvloop, httptools,
+# watchfiles, PyYAML) are C/Rust packages that need a compiler on
+# Termux/Android and add nothing at runtime. --reload still works without
+# them (uvicorn falls back to its stat reloader).
+uvicorn==0.53.0
+# WebSocket protocol for uvicorn - required by the chat endpoints. With the
+# [standard] extras removed this must be listed explicitly.
+websockets==17.1
+sqlalchemy==2.1.0
+pydantic==2.13.5
+python-multipart==0.0.32
+bcrypt==5.0.0
+PyJWT==2.15.0
+# boto3 is imported unconditionally by app/services.py, so it is required even
+# when STORAGE_BACKEND=local.
+boto3==1.43.102
+httpx==0.28.1
+pypdf==6.19.0
